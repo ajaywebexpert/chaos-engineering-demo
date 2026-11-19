@@ -16,7 +16,7 @@ resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2023-09-01' existing = 
 }
 
 // target: VMSS
-resource chaosvmsstarget 'Microsoft.Chaos/targets@2024-03-22-preview' = {
+resource chaosvmsstarget 'Microsoft.Chaos/targets@2023-11-01' = {
   name: 'Microsoft-VirtualMachineScaleSet'
   location: location
   scope: vmss
@@ -29,7 +29,7 @@ resource chaosvmsstarget 'Microsoft.Chaos/targets@2024-03-22-preview' = {
 }
 
 // chaos experiment: vmss
-resource chaosvmssexperiment 'Microsoft.Chaos/experiments@2024-03-22-preview' = {
+resource chaosvmssexperiment 'Microsoft.Chaos/experiments@2023-11-01' = {
   name: chaosvmssExperimentName
   location: location  
   identity: {
