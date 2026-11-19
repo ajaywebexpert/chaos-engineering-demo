@@ -15,7 +15,7 @@ param zoneRedundant bool = false
 param deployChaos bool = true
 
 @description('The VM size for the AKS node pool')
-param aksVmSize string = 'Standard_B2s_v2'
+param aksVmSize string = 'Standard_D2s_v4'
 
 @description('SQLServerAdmin principal')
 param sqlServerAdmin object

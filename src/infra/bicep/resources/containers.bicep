@@ -8,7 +8,7 @@ param location string = resourceGroup().location
 param zoneRedundant bool = false
 
 @description('The VM size for the AKS node pool')
-param aksVmSize string = 'Standard_B2s_v2'
+param aksVmSize string = 'Standard_D2s_v4'
 
 @description('VNet name to deploy to')
 param vnetName string
