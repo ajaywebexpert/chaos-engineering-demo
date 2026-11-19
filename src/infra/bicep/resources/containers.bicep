@@ -7,6 +7,9 @@ param location string = resourceGroup().location
 @description('Set zone redundancy for all resources')
 param zoneRedundant bool = false
 
+@description('The VM size for the AKS node pool')
+param aksVmSize string = 'Standard_D2s_v3'
+
 @description('VNet name to deploy to')
 param vnetName string
 
@@ -101,7 +104,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
         enableAutoScaling: aksAutoScaling
         minCount: 1 // minimum node count
         maxCount: 3 // maximum node count
-        vmSize: 'Standard_D2s_v3'
+        vmSize: aksVmSize
         osType: 'Linux'
         mode: 'System'
         availabilityZones: zoneRedundant ? ['1', '2', '3'] : []
