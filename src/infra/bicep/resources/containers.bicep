@@ -101,7 +101,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
         enableAutoScaling: aksAutoScaling
         minCount: 1 // minimum node count
         maxCount: 3 // maximum node count
-        vmSize: 'standard_b2s'
+        vmSize: 'Standard_B2s_v2'
         osType: 'Linux'
         mode: 'System'
         availabilityZones: zoneRedundant ? ['1', '2', '3'] : []
